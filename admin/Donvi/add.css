@@ -1,0 +1,27 @@
+body{
+    overflow-x: hidden;
+    font-family: tahoma;
+    font-size: 16px;}
+html {
+   
+    color: #5a5a5a;
+    font-family: vedrana, sans-serif;
+    text-rendering: optimizeLegibility;
+    line-height: 1.8;
+}
+
+
+h1
+{
+	text-align: center;
+}
+
+
+h2{
+	font-size: 23px;
+	color: #cd3c3f!important;
+}
+th{
+	font-weight: 200;
+	font-size: 19px;
+}
