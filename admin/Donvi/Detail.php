@@ -25,7 +25,7 @@ if (isset($_GET['id'])) {
 	<title>CHi TIết</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-	         <link rel="stylesheet" type="text/css" href="add.css">
+	         <link rel="stylesheet" type="text/css" href="Detail.css">
 	<link rel="shortcut icon" type="image/ico" href="../icon/logo.ico">
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -86,18 +86,53 @@ foreach ($loginList as $item) {
 					</tbody>
 			</table>
 
+
+
+
+<h2 class="text-center">Văn phòng khoa :<?=$item['sophong']?></h2>
+<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th width="50px" class="text-warning">STT</th>
+							<th class="text-warning">Tên </th>
+							<th class="text-warning"> Chức vụ</th>
+							<th class="text-warning"> Điện thoại cơ quan</th>
+							<th class="text-warning"> Email</th>
+							<th class="text-warning">Số điện thoại</th>	
+						</tr>
+					</thead>
+					<tbody>
+<?php
+//Lay danh sach tai khoan tu database
+$sql          = 'select * from canbo where id_donvi = ' .$id;
+$loginList = select_list($sql);
+
+$index = 1;
+foreach ($loginList as $item) {
+
+	echo '<tr>
+				<td class="text-warning">'.($index++).'</td>
+				<td >'.$item['name'].'</td>
+				<td >'.$item['chucvu'].'</td>
+				<td >'.$item['coquan'].'</td>
+				<td >'.$item['email'].'</td>
+				<td >0'.$item['sdt'].'</td>
+
+				
+			</tr>';
+}
+?>
+					</tbody>
+</table>
+
+
 <?php 
 
-$child        = 'select id_child from donvi where id = ' .$id;
-$id_now       = select_one($child);
-if ($id_now != null) {
-	$idc = $id_now['id_child'];
-}
-$sqlid        = 'select * from donvi where id_child = ' .$idc;
+$sqlid        = 'select * from donvi where id_child = ' .$id;
 $listitem 		= select_list($sqlid);
 $index = 1;
 
-if ($id == $idc) {
+
 foreach ($listitem as $list) { 
 	$idcb  = $list['id'];
 	$canbo = "select id from canbo where id_child = " .$idcb ;
@@ -140,47 +175,12 @@ foreach ($loginList as $item) {
 ?>
 					</tbody>
 				</table>
-<?php } } ?>
+<?php }  ?>
 
-<?php if ($id != $idc) { ?>
 
-<h2 class="text-center">Văn phòng khoa :<?=$item['sophong']?></h2>
-<table class="table table-bordered table-hover">
-					<thead>
-						<tr>
-							<th width="50px" class="text-warning">STT</th>
-							<th class="text-warning">Tên </th>
-							<th class="text-warning"> Chức vụ</th>
-							<th class="text-warning"> Điện thoại cơ quan</th>
-							<th class="text-warning"> Email</th>
-							<th class="text-warning">Số điện thoại</th>	
-						</tr>
-					</thead>
-					<tbody>
-<?php
-//Lay danh sach tai khoan tu database
-$sql          = 'select * from canbo where id_donvi = ' .$id;
-$loginList = select_list($sql);
 
-$index = 1;
-foreach ($loginList as $item) {
 
-	echo '<tr>
-				<td class="text-warning">'.($index++).'</td>
-				<td >'.$item['name'].'</td>
-				<td >'.$item['chucvu'].'</td>
-				<td >'.$item['coquan'].'</td>
-				<td >'.$item['email'].'</td>
-				<td >0'.$item['sdt'].'</td>
 
-				
-			</tr>';
-}
-?>
-					</tbody>
-</table>
-
-<?php } ?>
 
 
 

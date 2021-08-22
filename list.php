@@ -86,7 +86,7 @@
 <?php
 
 
- $sql= "select * from donvi where id = id_child ".$wh ;
+ $sql= "select * from donvi where id_child is NULL ".$wh ;
 
 $postList = select_list($sql);
 $index = 1 ;

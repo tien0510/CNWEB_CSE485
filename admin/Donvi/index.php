@@ -39,7 +39,7 @@ require_once ('../../db/dbhelper.php');
 	    <a class="nav-link active" href="#">Quản Lý Đơn Vị</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link " href="../Danhba/index.php">Quản Lý Danh Bạ</a>
+	    <a class="nav-link " href="../Danhba/index.php">Quản Lý Cán Bộ</a>
 	  </li>
 	</ul>
 
@@ -49,6 +49,9 @@ require_once ('../../db/dbhelper.php');
 				<h2 class="text-center">Danh Sách Đơn Vị</h2>
 			
 			</div>
+			<a href="add.php">
+					<button class="btn btn-success" style="margin-left: 0px  ;margin-bottom: 15px;width: 200px;">Thêm Đơn Vị Mới</button>
+				</a>
 			<div class="panel-body">
 				
 				<table class="table table-bordered table-hover">
@@ -56,29 +59,56 @@ require_once ('../../db/dbhelper.php');
 						<tr>
 							<th width="50px">STT</th>
 							<th>Tên Cơ Quan, Đơn Vị</th>
-
+							<th>Trực Thuộc Đơn Vị</th>
+							<th></th>
+							<th></th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
 <?php
 
 
- $sql= "select * from donvi where id = id_child ";
+ $sql     = "select * from donvi ";
 
-$postList = select_list($sql);
+$postList =  select_list($sql);
 $index = 1 ;
 foreach ($postList as $item) {
-
-
+	if (isset($item['id_child'])) {
+		$father  = "select name from donvi where id = " .$item['id_child'];
+		 $fa      =  select_one($father);
+		 if ($fa !=null) {
+		 	$fath = $fa['name'];
+		 }
+	}
+ 
  ?>
-
+ 
 	<tr>
 				<td><?=($index++)?></td>
+				<?php 	
+
+				if  ($item['id_child'] == null) {?>
+						
+				<td class="text text-danger" style="font-size : 20px"><i><?=$item['name']?></i></td>
+				<td class="text text-danger" style="font-size : 20px" >Không</td>
+				<?php }
+				else{?>
+						
 				<td ><?=$item['name']?></td>
+				<td ><?=$fath?></td>
+				<?php }?>
 				
 				<td>
 				<a href="Detail.php?id=<?=$item['id']?>">
 				<button class="btn btn-success">Xem chi tiết</button></a>
+				</td>
+				<td>
+				<a href="add.php?id=<?=$item['id']?>">
+				<button class="btn btn-warning">Sửa TT</button></a>
+				</td>
+				<td>
+					<button class="btn btn-danger" onclick="deleteCategory(<?=$item['id']?>)">Xoá</button>
 				</td>
 				
 			</tr>
@@ -91,7 +121,25 @@ foreach ($postList as $item) {
 			</div>
 		</div>
 	</div>
+<script type="text/javascript">
+		function deleteCategory(id) {
+			var option = confirm('Bạn có chắc chắn muốn xoá danh mục này không?')
+			if(!option) {
+				return;
+			}
 
+			console.log(id)
+			//ajax - lenh post
+			$.post('delete.php', {
+				'id': id,
+				'action': 'delete'
+			}, function(data) {
+				location.reload()
+			})
+		}
+
+
+	</script>
 </body>
 
 </html>

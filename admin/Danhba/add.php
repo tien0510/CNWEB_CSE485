@@ -94,7 +94,7 @@ if (isset($_GET['id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Thêm/Sửa Tài Khoản</title>
+	<title>Thêm/Sửa Thông Tin Cán Bộ</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="shortcut icon" type="image/ico" href="../icon/logo.ico">
@@ -114,14 +114,14 @@ if (isset($_GET['id'])) {
 	    <a class="nav-link"  href="../Donvi/">Quản Lý Đơn Vị</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link " href="../Danhba/">Quản Lý Danh Bạ</a>
+	    <a class="nav-link " href="../Danhba/">Quản Lý Cán Bộ</a>
 	  </li>
 	</ul>
 
 	<div class="container">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h2 class="text-center">Cập nhật thông tin cá nhân</h2>
+				<h2 class="text-center">Thêm/Sửa Thông Tin Cán Bộ</h2>
 			</div>
 			<div class="panel-body" >
 				<form method="post" style = "width: 50% ; margin-left : 20%;margin-top:3%;">
@@ -173,6 +173,11 @@ if (isset($_GET['id'])) {
 
 					  </select>
 					</div>
+
+
+
+
+
 
 					<div class="form-group">
 					  <label for="thumbnail">Ảnh:</label>

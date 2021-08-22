@@ -46,8 +46,8 @@ $sql          = 'select * from donvi where id =' .$id;
 $loginList = select_list($sql);
 
 $index = 1;
-foreach ($loginList as $item) {
-
+foreach ($loginList as $item) {?>
+<h2 class="text-center">Thông tin liên hệ : <?=$item['name']?></h2><?php
 	echo '<tr>
 				<td class="text-warning">Máy trực</td>
 				<td >0'.$item['maytruc'].'</td>
@@ -63,69 +63,15 @@ foreach ($loginList as $item) {
 }
 ?>
 
-<h2 class="text-center">Thông tin liên hệ : <?=$item['name']?></h2>
+
 
 
 					</tbody>
 			</table>
 
-<?php 
-
-$child        = 'select id_child from donvi where id = ' .$id;
-$id_now       = select_one($child);
-if ($id_now != null) {
-	$idc = $id_now['id_child'];
-}
-$sqlid        = 'select * from donvi where id_child = ' .$idc;
-$listitem 		= select_list($sqlid);
-$index = 1;
-
-if ($id == $idc) {
-foreach ($listitem as $list) { 
-	$idcb  = $list['id'];
-	$canbo = "select id from canbo where id_child = " .$idcb ;
-	?>
 
 
 
-	
-<h2 class="">  <?=$list['name']?> : <?=$list['sophong']?></h2>
-<table class="table table-bordered table-hover">
-					<thead>
-						<tr>
-							<th width="50px" class="text-success">STT</th>
-							<th class="text-success">Tên </th>
-							<th class="text-success"> Chức vụ</th>
-							<th class="text-success"> Điện thoại cơ quan</th>
-							<th class="text-success"> Email</th>
-							<th class="text-success">Số điện thoại</th>	
-						</tr>
-					</thead>
-					<tbody>
-<?php
-$sql          = 'select * from canbo where id_donvi = ' .$idcb;
-$loginList = select_list($sql);
-
-$index = 1;
-foreach ($loginList as $item) {
-
-	echo '<tr>
-				<td class="text-primary">'.($index++).'</td>
-				<td >'.$item['name'].'</td>
-				<td >'.$item['chucvu'].'</td>
-				<td >'.$item['coquan'].'</td>
-				<td >'.$item['email'].'</td>
-				<td >0'.$item['sdt'].'</td>
-
-				
-			</tr>';
-}
-?>
-					</tbody>
-				</table>
-<?php } } ?>
-
-<?php if ($id != $idc) { ?>
 
 <h2 class="text-center">Văn phòng khoa :<?=$item['sophong']?></h2>
 <table class="table table-bordered table-hover">
@@ -163,7 +109,63 @@ foreach ($loginList as $item) {
 					</tbody>
 </table>
 
-<?php } ?>
+
+
+<?php 
+$sqlid        = 'select * from donvi where id_child = ' .$id;
+$listitem 		= select_list($sqlid);
+$index = 1;
+
+
+
+
+
+foreach ($listitem as $list) { 
+	$idcb  = $list['id']; // lấy id cán bộ của đơn vị đang xét
+	?>
+
+
+
+	
+<h2 class="">  <?=$list['name']?> : <?=$list['sophong']?></h2>
+<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th width="50px" class="text-success">STT</th>
+							<th class="text-success">Tên </th>
+							<th class="text-success"> Chức vụ</th>
+							<th class="text-success"> Điện thoại cơ quan</th>
+							<th class="text-success"> Email</th>
+							<th class="text-success">Số điện thoại</th>	
+						</tr>
+					</thead>
+					<tbody>
+<?php
+$sql          = 'select * from canbo where id_donvi = ' .$idcb;
+$loginList = select_list($sql);
+$index = 1;
+foreach ($loginList as $item) {
+
+	echo '<tr>
+				<td class="text-primary">'.($index++).'</td>
+				<td >'.$item['name'].'</td>
+				<td >'.$item['chucvu'].'</td>
+				<td >'.$item['coquan'].'</td>
+				<td >'.$item['email'].'</td>
+				<td >0'.$item['sdt'].'</td>
+
+				
+			</tr>';
+}
+?>
+					</tbody>
+				</table>
+<?php }?>
+
+
+
+
+
 
 
 <?php require_once('footer.php') ?>

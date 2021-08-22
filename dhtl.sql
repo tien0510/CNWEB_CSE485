@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2021 at 11:30 AM
+-- Generation Time: Aug 22, 2021 at 12:22 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `canbo` (
 
 INSERT INTO `canbo` (`id`, `name`, `thumbnail`, `chucvu`, `coquan`, `email`, `sdt`, `id_donvi`) VALUES
 (1, 'Nguyễn Thanh Tùng', 'http://cse.tlu.edu.vn/Portals/0/Images/2016/Tung%20VIASM.jpg', 'Trưởng Ban', '0353037823', 'NTT@gmail.com', 123456789, 1),
-(2, 'Kiều Tuấn Dũng', 'https://lh3.googleusercontent.com/proxy/Ii7NlL23-Flih25dLrZ_HHAbogzerc_xgRtBjgTndJ0Tb-GNjAHnUA-BafLoSXfDJAWX3Yl9m2CDV5L9RujgcqLcjt_Zje29kVxyWG2qQ4IKDoQ', 'Trưởng BM', '0353037823', 'kituzu@e.tlu.edu.vn', 123456789, 24),
+(2, 'Kiều Tuấn Dũng', 'http://cse.tlu.edu.vn/Portals/0/2016/Kieu%20Tuan%20Dung.jpg', 'Trưởng BM', '0353037823', 'kituzu@e.tlu.edu.vn', 123456789, 24),
 (3, 'Nguyễn Khánh Linh', 'http://sie.tlu.edu.vn/Portals/0/Nguyen%20Khanh%20Linh.jpg', 'Phó Ban', '0353037823', 'NTTH@gmail.com', 123456789, 1),
 (4, 'Nguyễn Thị Thu Hương', 'http://cse.tlu.edu.vn/Portals/0/2016/HuongNT.jpg', 'Trợ Lý Hội Đồng', '0353037823', 'NKL@gmail.com', 369852741, 2),
 (5, 'Nguyễn Hữu Thọ', 'http://cse.tlu.edu.vn/Portals/0/Users/nguyenhuutho.jpg', 'Trưởng Khoa', '0353037823', 'NTH@gmail.com', 123456789, 20),
@@ -70,7 +70,9 @@ INSERT INTO `canbo` (`id`, `name`, `thumbnail`, `chucvu`, `coquan`, `email`, `sd
 (35, '	Lưu Đức Trung', 'http://cse.tlu.edu.vn/Portals/0/Users/TrungLD.png', 'Trưởng BM', '0362321456', 'luuductrung@tlu.edu.vn', 321758521, 23),
 (36, '	Đỗ Oanh Cường', 'http://cse.tlu.edu.vn/Portals/0/2016/Do%20Oanh%20Cuong%202.jpg', 'Giảng Viên', '0362321456', 'cuongdo@tlu.edu.vn', 315192969, 22),
 (37, '	Nguyễn Văn Nam', 'http://cse.tlu.edu.vn/Portals/0/Users/ngvannam.jpg', 'Giảng Viên', '0362321456', 'NVN@e.tlu.edu.vn', 315192969, 24),
-(38, '	Nguyễn Ngọc Quỳnh Châu ', 'http://cse.tlu.edu.vn/Portals/0/Users/chau.jpg', 'Giảng viên', '0363123654', 'nnqc@e.tlu.edu.vn', 369852147, 24);
+(38, '	Nguyễn Ngọc Quỳnh Châu ', 'http://cse.tlu.edu.vn/Portals/0/Users/chau.jpg', 'Giảng viên', '0363123654', 'nnqc@e.tlu.edu.vn', 369852147, 24),
+(39, 'Phạm Minh Tiến', 'https://scontent.fhph1-2.fna.fbcdn.net/v/t1.6435-9/234800289_2913036925625045_1841911456910095711_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=DJ27Iyf_grUAX8SPD5F&_nc_ht=scontent.fhph1-2.fna&oh=32d3f9bf7bb19e3401a08665f0f49ef3&oe=614835A3', 'Trưởng Đơn Vị', '0363123654', 'acc1@gmail.com', 353037823, 30),
+(40, 'Tiến ', 'https://scontent.fhph1-1.fna.fbcdn.net/v/t1.6435-9/82276356_2469065336688875_4404120166091194368_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=3XdFtKbRUwgAX-IJu3H&_nc_ht=scontent.fhph1-1.fna&oh=2edd28c95ec6668bfda6e4a83e9f6e2e&oe=6145BDD4', 'Đơn Vị Con', '0369851421', 'pmt05102000@gmail.com', 353037823, 32);
 
 -- --------------------------------------------------------
 
@@ -94,12 +96,12 @@ CREATE TABLE `donvi` (
 --
 
 INSERT INTO `donvi` (`id`, `name`, `sophong`, `maytruc`, `diachi`, `email`, `website`, `id_child`) VALUES
-(1, 'Ban Giám Hiệu', 'P202', 368236741, 'Tầng2  toà A1', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', 1),
-(2, 'Hội Đồng Trường', 'P102', 36974512, 'Tầng 1 nhà B2', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', 2),
-(3, 'Văn Phòng Đảng Uỷ', 'P407', 427241274, 'tầng 4 nhà  A2', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', 3),
+(1, 'Ban Giám Hiệu', 'P202', 368236741, 'Tầng2  toà A1', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', NULL),
+(2, 'Hội Đồng Trường', 'P102', 36974512, 'Tầng 1 nhà B2', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', NULL),
+(3, 'Văn Phòng Đảng Uỷ', 'P407', 427241274, 'tầng 4 nhà  A2', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', NULL),
 (4, 'Văn Phòng Công Đoàn', 'P453', 124852741, 'tầng 4 nhà  A2', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', 3),
 (5, 'Văn Phòng Đoàn Thanh Niên', 'P410', 124785963, 'tầng 4 nhà  A2', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', 3),
-(6, 'Phòng Hành Chính Tổng Hợp', 'P114', 564127851, 'tầng 1 nhà A4', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', 6),
+(6, 'Phòng Hành Chính Tổng Hợp', 'P114', 564127851, 'tầng 1 nhà A4', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', NULL),
 (7, 'Phòng Quản Trị', 'P136', 784963245, 'tầng 1 nhà A4', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', 6),
 (8, 'Phòng Tổ Chức Cán Bộ', 'P101', 364235124, 'tầng 1 nhà A4', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', 6),
 (9, 'Phòng Đào Tạo', 'P102', 963258753, 'tầng 1 nhà A4', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', 6),
@@ -110,10 +112,12 @@ INSERT INTO `donvi` (`id`, `name`, `sophong`, `maytruc`, `diachi`, `email`, `web
 (14, 'Phòng Khoa Học Công Nghệ', 'P145', 141239751, 'tầng 1 nhà A4', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', 6),
 (15, 'Thư Viện', 'P159', 420364850, 'tầng 1 nhà A4', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', 6),
 (19, 'Trạm y tế', 'P164', 301425762, 'tầng 1 nhà A4', 'vpkdhtl@e.tlu.edu.vn', 'http://cse.tlu.edu.vn', 6),
-(20, 'Khoa Công Nghệ Thông Tin', 'P230', 363951364, 'Tầng 2 Toà C5 ', 'CNTTtlu@e.tlu.edu.vn', 'CTNTT.edu.vn', 20),
+(20, 'Khoa Công Nghệ Thông Tin', 'P230', 363951364, 'Tầng 2 Toà C5 ', 'CNTTtlu@e.tlu.edu.vn', 'CTNTT.edu.vn', NULL),
 (22, 'BM Toán Học', 'p201', NULL, NULL, NULL, NULL, 20),
 (23, 'BM Kỹ thuật MT & Mạng', 'P207', NULL, NULL, NULL, NULL, 20),
-(24, 'BM Hệ Thống Thông Tin', 'P223', NULL, NULL, NULL, NULL, 20);
+(24, 'BM Hệ Thống Thông Tin', 'P223', NULL, NULL, NULL, NULL, 20),
+(30, 'Test Thêm,Sửa,Xoá Đơn Vị', 'P102', 363123654, 'tầng 1 toà B3', 'doanhnn@tlu.edu.vn', 'dvm.edu.vn', NULL),
+(32, 'Test đơn vị con', '31', 31313131, 'tầng 31 toà B3', '31@tlu.edu.vn', 'website31', 30);
 
 -- --------------------------------------------------------
 
@@ -168,13 +172,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `canbo`
 --
 ALTER TABLE `canbo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `donvi`
 --
 ALTER TABLE `donvi`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `user`

@@ -52,7 +52,7 @@ require_once ('../../db/dbhelper.php');
 	    <a class="nav-link" href="../Donvi/">Quản Lý Đơn Vị</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link active" href="#">Quản Lý Danh Bạ</a>
+	    <a class="nav-link active" href="#">Quản Lý Cán Bộ</a>
 	  </li>
 
 	</ul>
@@ -60,18 +60,21 @@ require_once ('../../db/dbhelper.php');
 	<div class="container-fluid">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h2 class="text-center" style="color: #FFFFFF;">Quản Lý Tài Khoản</h2>
+				<h2 class="text-center" style="color: #000;">Thông Tin Cán Bộ</h2>
 			</div>
 			<div class="panel-body">
 				<div class="menu" style="display: flex; " >
-				<a href="add.php">
-					<button class="btn btn-success" style="margin-left: 50px  ;margin-bottom: 15px;width: 200px;">Thêm Tài Khoản</button>
-				</a>
+			
 				<a href="../../index.php">
 					<button class="btn btn-warning" style="width: 200px ;margin-left: 50px  ; margin-bottom: 15px "> Trang Chủ </button>
-				</a><form action="">
-				<select class="btn btn-primary"  name="id_donvi" value="<?=$dv?>" style="width: 200px;margin-left: 50px  ; margin-bottom: 15px "> Đơn Vị 
-							<option value="">Lọc Theo đơn vị</option>
+				</a>
+				<a href="add.php">
+					<button class="btn btn-success" style="margin-left: 50px  ;margin-bottom: 15px;width: 200px;">Thêm Mới Cán Bộ</button>
+				</a>
+				<form action="">
+				<select class="btn btn-primary"  name="id_donvi" value="<?=$dv?>" style="width: 200px;margin-left: 50px  ; margin-bottom: 15px ">
+							<option value="" >Chọn Đơn Vị</option>
+							<option value="" >Tất Cả</option>
 
 					<?php 
 					  		$sql = "select * from donvi " ;
@@ -82,7 +85,7 @@ require_once ('../../db/dbhelper.php');
 
 					  	<?php } ?>
 					</select>
-					<button style="width: 100px;margin-bottom: 15px;margin-left: 10px  ;" class="btn btn-success">Lọc</button>
+					<button style="width: 100px;margin-bottom: 15px;margin-left: 10px  ;" class="btn btn-info">Kết Quả</button>
 				
 			</form>
 				<a href="logout.php">
