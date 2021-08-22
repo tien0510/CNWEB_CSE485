@@ -33,7 +33,7 @@
           <div class="container mt-0 mt-md-5">
             <div class="row mb-3 mb-sm-2">
               <div class="col-12">
-                <h2 class="h3 text-secondary text-capitalize font-weight-bold mb-4">Danh Sách Cơ quan phòng ban</h2>
+                <h2 class="h3 text-danger text-capitalize font-weight-bold mb-4">Danh Sách Đơn Vị,Phòng Ban Lớn</h2>
                 <div class="mb-4"></div>
               </div>
             </div>
@@ -78,7 +78,7 @@
           <thead>
             <tr>
               <th width="50px">STT</th>
-              <th>Tên cơ quan phòng ban</th>
+              <th>Tên đơn vị, phòng ban lớn</th>
 
             </tr>
           </thead>

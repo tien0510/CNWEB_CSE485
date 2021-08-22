@@ -95,6 +95,7 @@ foreach ($loginList as $item) {
 						<tr>
 							<th width="50px" class="text-warning">STT</th>
 							<th class="text-warning">Tên </th>
+							<th class="text-warning">Ảnh </th>
 							<th class="text-warning"> Chức vụ</th>
 							<th class="text-warning"> Điện thoại cơ quan</th>
 							<th class="text-warning"> Email</th>
@@ -113,6 +114,7 @@ foreach ($loginList as $item) {
 	echo '<tr>
 				<td class="text-warning">'.($index++).'</td>
 				<td >'.$item['name'].'</td>
+				<td><img src='.$item["thumbnail"].' style="max-width: 100px"/></td>
 				<td >'.$item['chucvu'].'</td>
 				<td >'.$item['coquan'].'</td>
 				<td >'.$item['email'].'</td>
@@ -147,6 +149,7 @@ foreach ($listitem as $list) {
 						<tr>
 							<th width="50px" class="text-success">STT</th>
 							<th class="text-success">Tên </th>
+							<th class="text-warning">Ảnh </th>
 							<th class="text-success"> Chức vụ</th>
 							<th class="text-success"> Điện thoại cơ quan</th>
 							<th class="text-success"> Email</th>
@@ -164,6 +167,7 @@ foreach ($loginList as $item) {
 	echo '<tr>
 				<td class="text-primary">'.($index++).'</td>
 				<td >'.$item['name'].'</td>
+				<td><img src='.$item["thumbnail"].' style="max-width: 100px"/></td>
 				<td >'.$item['chucvu'].'</td>
 				<td >'.$item['coquan'].'</td>
 				<td >'.$item['email'].'</td>
