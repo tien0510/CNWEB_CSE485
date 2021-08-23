@@ -85,8 +85,12 @@
           <tbody>
 <?php
 
-
+if (isset($_GET['searchText'])) {
+   $sql= "select * from donvi where id !='NULL' ".$wh ;
+}
+else{
  $sql= "select * from donvi where id_child is NULL ".$wh ;
+}
 
 $postList = select_list($sql);
 $index = 1 ;
