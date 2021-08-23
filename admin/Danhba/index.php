@@ -85,7 +85,7 @@ require_once ('../../db/dbhelper.php');
 
 					  	<?php } ?>
 					</select>
-					<button style="width: 100px;margin-bottom: 15px;margin-left: 10px  ;" class="btn btn-info">Kết Quả</button>
+					<button style="width: 100px;margin-bottom: 15px;margin-left: 10px  ;" class="btn btn-info">Hiển Thị</button>
 				
 			</form>
 				<a href="logout.php">

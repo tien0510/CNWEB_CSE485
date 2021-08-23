@@ -31,7 +31,21 @@ require_once ('../../db/dbhelper.php');
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
+<style>
+	td{
+	font-weight : 400 ;font-size : 1.3rem	;}
+	.search button{
+    background-color: white;
+    border: none;
+}
 
+.search button img{
+    width: 50px;
+    height: 45px;
+   margin-top: 3px;
+  
+}
+</style>
 <body >
 	<ul class="nav nav-tabs">
 
@@ -52,6 +66,30 @@ require_once ('../../db/dbhelper.php');
 			<a href="add.php">
 					<button class="btn btn-success" style="margin-left: 0px  ;margin-bottom: 15px;width: 200px;">Thêm Đơn Vị Mới</button>
 				</a>
+				<form class="form-inline" action="" method="get" style="margin-left: 50px  ; ">
+              <div class="input-group w-100">
+         <?php 
+        	  $id = "";
+						$wh = "";
+        if (isset($_GET['searchText'])) {
+           $searchText= $_GET['searchText'];
+           $wh = " where name like '%".$searchText."%' ";
+         }
+           else{
+             $searchText="";
+             $wh = " where name like '%".$searchText."%'  ";
+
+           }
+            ?>
+
+              <input class='form-control border-primary'  type='text' name='searchText' value='<?=$searchText?>' placeholder='Nhập tên cán bộ...'>
+
+           
+                <div  class="search" style="margin-top: -5px  ; ">
+                  <button  type="submit"><img   src="../../images/search.png"></button>
+                </div>
+              </div>
+            </form>
 			<div class="panel-body">
 				
 				<table class="table table-bordered table-hover">
@@ -69,7 +107,7 @@ require_once ('../../db/dbhelper.php');
 <?php
 
 
- $sql     = "select * from donvi ";
+ $sql     = 'select * from donvi '.$wh;
 
 $postList =  select_list($sql);
 $index = 1 ;

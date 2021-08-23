@@ -56,11 +56,20 @@ if (isset($_GET['id'])) {
       $dtcq = $directory['coquan'];
 	  $iddv = $directory['id_donvi'];
 
-	  $sqldv = "select name from donvi where id = " .$iddv;
+	  $sqldv = "select * from donvi where id = " .$iddv;
 	  $iddv = select_one($sqldv) ;
 	  if ($iddv!= null) {
-	  		$dv = $iddv['name'];
+	  		$dv     = $iddv['name'];
+	  		$id_chi = $iddv['id_child'];
 	  }
+	  if (isset($id_chi)) {
+	  	 $sqldvc = "select name from donvi where id = " .$id_chi ;
+	  	$iddvc = select_one($sqldvc) ;
+	  	if ($iddvc!= null) {
+	  		$dvc = $iddvc['name'];
+	  	}
+	  }
+	 
 
 
       }  ?>
@@ -80,6 +89,13 @@ if (isset($_GET['id'])) {
             <div class="details col-md-12" style="padding: 12%; ">
             <h3 class="sizes" style="margin: 50px auto"><i style="color : #cd3c3f">Chức Vụ : </i><?=$cv?></h3>
             <h3 class="sizes"style="margin: 50px auto"><i style="color : #cd3c3f">Đơn Vị  : </i><?=$dv?></h3>
+           <?php if (isset($dvc)) {?>
+          <h3 class="sizes"style="margin: 50px auto"><i style="color : #cd3c3f">Trực Thuộc Đơn Vị  : </i><?=$dvc?></h3>
+          <?php  }else {?>
+          	 <h3 class="sizes"style="margin: 50px auto"><i style="color : #cd3c3f">Trực Thuộc Đơn Vị  : </i>Không</h3>
+         <?php  } ?>
+             
+
             <h3 class="sizes"style="margin: 50px auto"><i style="color : #cd3c3f">Email   : </i><?=$em?></h3>
             <h3 class="sizes"style="margin: 50px auto"><i style="color : #cd3c3f">Số DT   : </i>0<?=$sdt?></h3>
             <h3 class="sizes"style="margin: 50px auto"><i style="color : #cd3c3f">ĐT Cơ Quan :</i><?=$dtcq?></h3>
