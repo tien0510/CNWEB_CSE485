@@ -102,7 +102,7 @@ if (isset($_GET['id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Thêm/Sửa Thông Tin Cán Bộ</title>
+	<title>Thêm/Sửa Thông Tin Đơn Vị</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="shortcut icon" type="image/ico" href="../icon/logo.ico">
@@ -129,7 +129,7 @@ if (isset($_GET['id'])) {
 	<div class="container">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h2 class="text-center">Thêm/Sửa Thông Tin Cán Bộ</h2>
+				<h2 class="text-center">Thêm/Sửa Thông Tin Đơn Vị</h2>
 			</div>
 			<div class="panel-body" >
 				<form method="post" style = "width: 50% ; margin-left : 20%;margin-top:3%;">

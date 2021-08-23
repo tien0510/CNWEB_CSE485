@@ -6,7 +6,7 @@ require_once ('db/dbhelper.php');
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bài Đăng</title>
+	<title>Home-TLU</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="shortcut icon" type="image/ico" href="icon/logo.ico">
