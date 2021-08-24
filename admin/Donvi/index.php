@@ -112,8 +112,8 @@ require_once ('../../db/dbhelper.php');
 $postList =  select_list($sql);
 $index = 1 ;
 foreach ($postList as $item) {
-	if (isset($item['id_child'])) {
-		$father  = "select name from donvi where id = " .$item['id_child'];
+	if (isset($item['id_parent'])) {
+		$father  = "select name from donvi where id = " .$item['id_parent'];
 		 $fa      =  select_one($father);
 		 if ($fa !=null) {
 		 	$fath = $fa['name'];
@@ -126,7 +126,7 @@ foreach ($postList as $item) {
 				<td><?=($index++)?></td>
 				<?php 	
 
-				if  ($item['id_child'] == null) {?>
+				if  ($item['id_parent'] == null) {?>
 						
 				<td class="text text-danger" style="font-size : 20px"><i><?=$item['name']?></i></td>
 				<td class="text text-danger" style="font-size : 20px" >Không</td>

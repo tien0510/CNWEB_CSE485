@@ -12,7 +12,7 @@
             // header("Location:index.php");
         }
 
-$id = $name  = $sp =  $mt =  $em =  $dc = $dv = $website = $id_child = '';
+$id = $name  = $sp =  $mt =  $em =  $dc = $dv = $website = $id_parent = '';
 if (!empty($_POST)) {
 	if (isset($_POST['donvi'])) {
 		$name = $_POST['donvi'];
@@ -51,13 +51,13 @@ if (!empty($_POST)) {
 			
 		}else{
 
-		$sql = 'insert into donvi(name, sophong, maytruc, diachi, email, website ,id_child) values("'.$name.'","'.$sp.'", "'.$mt.'", "'.$dc.'", "'.$em.'", "'.$website.'", "'.$dv.'" )';	
+		$sql = 'insert into donvi(name, sophong, maytruc, diachi, email, website ,id_parent) values("'.$name.'","'.$sp.'", "'.$mt.'", "'.$dc.'", "'.$em.'", "'.$website.'", "'.$dv.'" )';	
 		}	}
 		 else {
 		 	if ($dv == "NULL") {
-			$sql = 'update donvi set name = "'.$name.'", sophong = "'.$sp.'", maytruc = "'.$mt.'", diachi = "'.$dc.'", email = "'.$em.'", website = "'.$website.'", id_child = '.$dv.' where id = '.$id;
+			$sql = 'update donvi set name = "'.$name.'", sophong = "'.$sp.'", maytruc = "'.$mt.'", diachi = "'.$dc.'", email = "'.$em.'", website = "'.$website.'", id_parent = '.$dv.' where id = '.$id;
 		}else{
-			$sql = 'update donvi set name = "'.$name.'", sophong = "'.$sp.'", maytruc = "'.$mt.'", diachi = "'.$dc.'", email = "'.$em.'", website = "'.$website.'", id_child = "'.$dv.'" where id = '.$id;
+			$sql = 'update donvi set name = "'.$name.'", sophong = "'.$sp.'", maytruc = "'.$mt.'", diachi = "'.$dc.'", email = "'.$em.'", website = "'.$website.'", id_parent = "'.$dv.'" where id = '.$id;
 		}
 		}
 		select($sql);
@@ -82,10 +82,10 @@ if (isset($_GET['id'])) {
 		$em 	  = $login['email'];
 		$dc 	  = $login['diachi'];
 		$website  = $login['website'];
-		if (isset($login['id_child'])) {
+		if (isset($login['id_parent'])) {
 			
-		$id_child = $login['id_child'];
-		$nm = "select name from donvi where id = " .$id_child;
+		$id_parent = $login['id_parent'];
+		$nm = "select name from donvi where id = " .$id_parent;
 		$a = select_one($nm);
 		if ( $a != null) {
 			$dv = $a['name'];
@@ -175,8 +175,8 @@ if (isset($_GET['id'])) {
 					  
 					  <select style="text-align:center;font-size : 20px;"  type="text" class="form-control" id="matkhau" name="donvicha">
 					  	
-							<option value="<?=$id_child?>"><?=$dv?></option>
-							<option value="NULL"<?php if ($id_child == "") {echo "selected"; } ?>>Không</option>
+							<option value="<?=$id_parent?>"><?=$dv?></option>
+							<option value="NULL"<?php if ($id_parent == "") {echo "selected"; } ?>>Không</option>
 
 					<?php
 					  		$sql = "select * from donvi " ;

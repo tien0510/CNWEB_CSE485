@@ -89,7 +89,7 @@ if (isset($_GET['searchText'])) {
    $sql= "select * from donvi where id !='NULL' ".$wh ;
 }
 else{
- $sql= "select * from donvi where id_child is NULL ".$wh ;
+ $sql= "select * from donvi where id_parent is NULL ".$wh ;
 }
 
 $postList = select_list($sql);

@@ -114,7 +114,7 @@ foreach ($loginList as $item) {
 
 
 <?php 
-$sqlid        = 'select * from donvi where id_child = ' .$id;
+$sqlid        = 'select * from donvi where id_parent = ' .$id;
 $listitem 		= select_list($sqlid);
 $index = 1;
 

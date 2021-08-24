@@ -130,14 +130,14 @@ foreach ($loginList as $item) {
 
 <?php 
 
-$sqlid        = 'select * from donvi where id_child = ' .$id;
+$sqlid        = 'select * from donvi where id_parent = ' .$id;
 $listitem 		= select_list($sqlid);
 $index = 1;
 
 
 foreach ($listitem as $list) { 
 	$idcb  = $list['id'];
-	$canbo = "select id from canbo where id_child = " .$idcb ;
+	$canbo = "select id from canbo where id_parent = " .$idcb ;
 	?>
 
 

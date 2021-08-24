@@ -60,7 +60,7 @@ if (isset($_GET['id'])) {
 	  $iddv = select_one($sqldv) ;
 	  if ($iddv!= null) {
 	  		$dv     = $iddv['name'];
-	  		$id_chi = $iddv['id_child'];
+	  		$id_chi = $iddv['id_parent'];
 	  }
 	  if (isset($id_chi)) {
 	  	 $sqldvc = "select name from donvi where id = " .$id_chi ;
